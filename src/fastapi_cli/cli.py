@@ -1,3 +1,5 @@
+import tracerite
+
 import logging
 import os
 from pathlib import Path
@@ -100,6 +102,7 @@ def callback(
     log_level = logging.DEBUG if verbose else logging.INFO
 
     setup_logging(level=log_level)
+    tracerite.load()  # Replace typer formatter with tracerite
 
 
 def _get_module_tree(module_paths: list[Path]) -> Tree:

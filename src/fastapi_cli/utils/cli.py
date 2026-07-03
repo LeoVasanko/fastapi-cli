@@ -1,6 +1,8 @@
 import logging
 from typing import Any
 
+import tracerite
+
 from rich_toolkit import RichToolkit, RichToolkitTheme
 from rich_toolkit.styles import TaggedStyle
 from uvicorn.logging import DefaultFormatter
@@ -10,6 +12,7 @@ class CustomFormatter(DefaultFormatter):
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         super().__init__(*args, **kwargs)
         self.toolkit = get_rich_toolkit()
+        tracerite.load()  # (Re)install inside uvicorn before loading the app
 
     def formatMessage(self, record: logging.LogRecord) -> str:
         message = record.getMessage()
