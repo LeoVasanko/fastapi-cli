@@ -126,6 +126,9 @@ exclude_lines = [
 [tool.coverage.html]
 show_contexts = true
 
+[tool.ruff]
+exclude = ["tests/assets/errors/syntax.py"]
+
 [tool.mypy]
 strict = true
 exclude = [

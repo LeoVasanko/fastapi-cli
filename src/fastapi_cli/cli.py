@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 from typing import Annotated, Any
 
+import tracerite
 import typer
 from pydantic import ValidationError
 from rich import print
