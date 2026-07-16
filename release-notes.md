@@ -2,6 +2,44 @@
 
 ## Latest Changes
 
+## 0.0.32 (2026-07-16)
+
+### Features
+
+* ✨ Set FASTAPI_ENV when running fastapi dev. PR [#477](https://github.com/fastapi/fastapi-cli/pull/477) by [@patrick91](https://github.com/patrick91).
+
+## 0.0.31 (2026-07-16)
+
+### Refactors
+
+* ✨ Trim default startup output and add --verbose to dev and run. PR [#471](https://github.com/fastapi/fastapi-cli/pull/471) by [@patrick91](https://github.com/patrick91).
+
+## 0.0.30 (2026-07-15)
+
+### Refactors
+
+* 🎨 Update CLI to use new design from `fastapi-cloud-cli`. PR [#470](https://github.com/fastapi/fastapi-cli/pull/470) by [@patrick91](https://github.com/patrick91).
+
+### Internal
+
+* ⬆ Bump fastapi-cloud-cli from 0.21.0 to 0.22.1. PR [#468](https://github.com/fastapi/fastapi-cli/pull/468) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump typer from 0.26.7 to 0.26.8. PR [#469](https://github.com/fastapi/fastapi-cli/pull/469) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump the python-packages group across 1 directory with 5 updates. PR [#473](https://github.com/fastapi/fastapi-cli/pull/473) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump the github-actions group with 3 updates. PR [#474](https://github.com/fastapi/fastapi-cli/pull/474) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump pre-commit hooks. PR [#472](https://github.com/fastapi/fastapi-cli/pull/472) by [@tiangolo](https://github.com/tiangolo).
+* 👷 Add GH workflow to bump pre-commit hook versions. PR [#448](https://github.com/fastapi/fastapi-cli/pull/448) by [@YuriiMotov](https://github.com/YuriiMotov).
+* 🔧 Set Dependabot schedule interval to "monthly". PR [#449](https://github.com/fastapi/fastapi-cli/pull/449) by [@YuriiMotov](https://github.com/YuriiMotov).
+
+## 0.0.29 (2026-07-08)
+
+### Fixes
+
+* 🐛 Avoid fancy logs for non-TTY output. PR [#457](https://github.com/fastapi/fastapi-cli/pull/457) by [@patrick91](https://github.com/patrick91).
+
+### Internal
+
+* 👷 Fix latest-changes checkout target. PR [#462](https://github.com/fastapi/fastapi-cli/pull/462) by [@tiangolo](https://github.com/tiangolo).
+
 ## 0.0.28 (2026-07-03)
 
 ### Fixes
