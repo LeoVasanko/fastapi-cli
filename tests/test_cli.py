@@ -23,7 +23,7 @@ assets_path = Path(__file__).parent / "assets"
 @pytest.fixture(autouse=True)
 def isolate_cli_environment(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.delenv("FASTAPI_ENV", raising=False)
-    monkeypatch.setattr("fastapi_cli.cli.should_use_rich_logs", lambda: True)
+    monkeypatch.setattr("fastapi_cli.utils.cli.should_use_rich_logs", lambda: True)
 
 
 def test_dev() -> None:
@@ -100,11 +100,7 @@ def test_run_does_not_set_fastapi_env() -> None:
     assert response.json() == {"fastapi_env": None}
 
 
-def test_run_uses_uvicorn_default_log_config_without_rich_logs(
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    monkeypatch.setattr("fastapi_cli.cli.should_use_rich_logs", lambda: False)
-
+def test_run_uses_uvicorn_log_config() -> None:
     with changing_dir(assets_path):
         with patch.object(uvicorn, "run") as mock_run:
             result = runner.invoke(app, ["run", "single_file_app.py"])
@@ -112,7 +108,8 @@ def test_run_uses_uvicorn_default_log_config_without_rich_logs(
             assert mock_run.called
             assert mock_run.call_args
 
-    assert "log_config" not in mock_run.call_args.kwargs
+    assert "log_config" in mock_run.call_args.kwargs
+    assert mock_run.call_args.kwargs["log_config"] == get_uvicorn_log_config()
 
 
 def test_dev_no_args_auto_discovery() -> None:

@@ -26,7 +26,6 @@ from .logging import setup_logging
 from .utils.cli import (
     get_rich_toolkit,
     get_uvicorn_log_config,
-    should_use_rich_logs,
 )
 
 app = typer.Typer(
@@ -281,9 +280,7 @@ def _run(
         toolkit.print("Logs:", bullet=False)
         toolkit.print_line()
 
-        extra_uvicorn_kwargs: dict[str, Any] = (
-            {"log_config": get_uvicorn_log_config()} if should_use_rich_logs() else {}
-        )
+        extra_uvicorn_kwargs: dict[str, Any] = {"log_config": get_uvicorn_log_config()}
 
         uvicorn.run(
             app=import_string,
