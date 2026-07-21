@@ -1,3 +1,4 @@
+import copy
 import logging
 import sys
 from typing import Any
@@ -10,6 +11,7 @@ from rich.text import Text
 from rich_toolkit import RichToolkit
 from rich_toolkit.element import Element
 from rich_toolkit.styles import BaseStyle
+from uvicorn.config import LOGGING_CONFIG
 from uvicorn.logging import DefaultFormatter
 
 logger = logging.getLogger(__name__)
@@ -149,46 +151,12 @@ class CustomFormatter(DefaultFormatter):
 
 
 def get_uvicorn_log_config() -> dict[str, Any]:
-    return {
-        "version": 1,
-        "disable_existing_loggers": False,
-        "formatters": {
-            "default": {
-                "()": CustomFormatter,
-                "fmt": "%(levelprefix)s %(message)s",
-                "use_colors": None,
-            },
-            "access": {
-                "()": CustomFormatter,
-                "fmt": "%(levelprefix)s %(client_addr)s - '%(request_line)s' %(status_code)s",
-            },
-        },
-        "handlers": {
-            "default": {
-                "formatter": "default",
-                "class": "logging.StreamHandler",
-                "stream": "ext://sys.stderr",
-            },
-            "access": {
-                "formatter": "access",
-                "class": "logging.StreamHandler",
-                "stream": "ext://sys.stdout",
-            },
-        },
-        "loggers": {
-            "uvicorn": {
-                "handlers": ["default"],
-                "level": "INFO",
-                "propagate": False,
-            },
-            "uvicorn.error": {"level": "INFO"},
-            "uvicorn.access": {
-                "handlers": ["access"],
-                "level": "INFO",
-                "propagate": False,
-            },
-        },
-    }
+    # Copy uvicorn's own default logging config, only swapping in our
+    # formatter (which installs TraceRite and renders logs with the toolkit)
+    config = copy.deepcopy(LOGGING_CONFIG)
+    for formatter in config["formatters"].values():
+        formatter["()"] = CustomFormatter
+    return config
 
 
 def get_rich_toolkit() -> RichToolkit:
