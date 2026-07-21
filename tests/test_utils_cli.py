@@ -28,9 +28,7 @@ def test_should_use_rich_logs_is_false_without_tty(
     assert should_use_rich_logs() is False
 
 
-def test_custom_formatter(monkeypatch: MonkeyPatch) -> None:
-    monkeypatch.setattr("fastapi_cli.utils.cli.should_use_rich_logs", lambda: True)
-
+def test_custom_formatter() -> None:
     formatter = CustomFormatter()
 
     record = logging.LogRecord(
@@ -56,9 +54,7 @@ def test_custom_formatter(monkeypatch: MonkeyPatch) -> None:
     assert "200" in formatted
 
 
-def test_custom_formatter_shutdown_prepends_newline(monkeypatch: MonkeyPatch) -> None:
-    monkeypatch.setattr("fastapi_cli.utils.cli.should_use_rich_logs", lambda: True)
-
+def test_custom_formatter_shutdown_prepends_newline() -> None:
     formatter = CustomFormatter()
 
     record = logging.LogRecord(

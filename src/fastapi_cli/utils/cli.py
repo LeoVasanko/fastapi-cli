@@ -138,12 +138,9 @@ class CustomFormatter(DefaultFormatter):
 
     def formatMessage(self, record: logging.LogRecord) -> str:
         message = record.getMessage()
-        if should_use_rich_logs():
-            result = self.toolkit.print_as_string(
-                message, emoji=_get_log_bullet(record.levelname)
-            )
-        else:
-            result = message
+        result = self.toolkit.print_as_string(
+            message, emoji=_get_log_bullet(record.levelname)
+        )
         # Prepend newline to fix alignment after ^C is printed by the terminal
         if message == "Shutting down":
             result = "\n" + result
