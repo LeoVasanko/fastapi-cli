@@ -127,7 +127,7 @@ exclude_lines = [
 show_contexts = true
 
 [tool.ruff]
-exclude = ["tests/assets/errors/syntax.py"]
+extend-exclude = ["tests/assets/errors/syntax.py"]
 
 [tool.mypy]
 strict = true
