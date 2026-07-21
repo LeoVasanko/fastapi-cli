@@ -21,10 +21,7 @@ from fastapi_cli.exceptions import FastAPICLIException
 
 from . import __version__
 from .logging import setup_logging
-from .utils.cli import (
-    get_rich_toolkit,
-    get_uvicorn_log_config,
-)
+from .utils.cli import get_rich_toolkit, get_uvicorn_log_config
 
 app = typer.Typer(
     rich_markup_mode="rich", context_settings={"help_option_names": ["-h", "--help"]}
