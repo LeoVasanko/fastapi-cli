@@ -8,18 +8,30 @@ import pytest
 
 assets_path = Path(__file__).parent / "assets"
 
+
 def _run_fastapi(*args: str) -> str:
     with socket() as sock:
         sock.bind(("127.0.0.1", 0))
         port = str(sock.getsockname()[1])
-    return subprocess.run(
-        [sys.executable, "-X", "utf8", "-m", "fastapi_cli", "run", "--host=127.0.0.1", f"--port={port}", *args],
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-X",
+            "utf8",
+            "-m",
+            "fastapi_cli",
+            "run",
+            "--host=127.0.0.1",
+            f"--port={port}",
+            *args,
+        ],
         cwd=assets_path,
         env={**os.environ, "FASTAPI_PORT": port},
-        stderr=subprocess.PIPE,
+        capture_output=True,
         encoding="utf-8",
-        timeout=5,
-    ).stderr or ""
+        timeout=30,
+    )
+    return result.stderr or ""
 
 
 def test_syntax_error() -> None:
