@@ -3,7 +3,6 @@ import sys
 from typing import Any
 
 import tracerite
-
 from rich._loop import loop_first
 from rich.console import Console, ConsoleOptions, RenderableType, RenderResult
 from rich.segment import Segment
