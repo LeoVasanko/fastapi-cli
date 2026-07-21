@@ -129,6 +129,10 @@ show_contexts = true
 [tool.ruff]
 extend-exclude = ["tests/assets/errors/syntax.py"]
 
+[tool.ty.src]
+# Intentionally broken file used to test CLI error formatting
+exclude = ["tests/assets/errors/syntax.py"]
+
 [tool.mypy]
 strict = true
 exclude = [
