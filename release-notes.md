@@ -4,6 +4,17 @@
 
 ### Internal
 
+* 👷 Migrate automatic labels to Latest Changes. PR [#493](https://github.com/fastapi/fastapi-cli/pull/493) by [@tiangolo](https://github.com/tiangolo).
+* 👷 Remove legacy label check. PR [#492](https://github.com/fastapi/fastapi-cli/pull/492) by [@tiangolo](https://github.com/tiangolo).
+* 🔐 Use PR Submit for pull requests. PR [#491](https://github.com/fastapi/fastapi-cli/pull/491) by [@tiangolo](https://github.com/tiangolo).
+* 👷 Use GitHub CLI for Git authentication. PR [#490](https://github.com/fastapi/fastapi-cli/pull/490) by [@tiangolo](https://github.com/tiangolo).
+* 👷 Use PR Push commit identity. PR [#489](https://github.com/fastapi/fastapi-cli/pull/489) by [@tiangolo](https://github.com/tiangolo).
+* 🔒 Replace pre-commit PAT with PR Push. PR [#487](https://github.com/fastapi/fastapi-cli/pull/487) by [@tiangolo](https://github.com/tiangolo).
+* 🔥 Remove the old Latest Changes workflow. PR [#486](https://github.com/fastapi/fastapi-cli/pull/486) by [@tiangolo](https://github.com/tiangolo).
+* ⬆ Bump the python-packages group across 1 directory with 7 updates. PR [#482](https://github.com/fastapi/fastapi-cli/pull/482) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump fastapi-cloud-cli from 0.22.1 to 0.22.2. PR [#483](https://github.com/fastapi/fastapi-cli/pull/483) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump typer from 0.26.8 to 0.27.0. PR [#484](https://github.com/fastapi/fastapi-cli/pull/484) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump the github-actions group with 5 updates. PR [#481](https://github.com/fastapi/fastapi-cli/pull/481) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆️ Upgrade latest-changes to 0.7.1. PR [#480](https://github.com/fastapi/fastapi-cli/pull/480) by [@tiangolo](https://github.com/tiangolo).
 
 ## 0.0.32 (2026-07-16)
