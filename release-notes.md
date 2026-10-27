@@ -2,8 +2,23 @@
 
 ## Latest Changes
 
+### Upgrades
+
+* ⬆️ Bump Typer min version to `0.26.1`. PR [#496](https://github.com/fastapi/fastapi-cli/pull/496) by [@YuriiMotov](https://github.com/YuriiMotov).
+
 ### Internal
 
+* ⬆ Bump the python-packages group across 1 directory with 5 updates. PR [#503](https://github.com/fastapi/fastapi-cli/pull/503) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump typer from 0.27.1 to 0.27.2. PR [#505](https://github.com/fastapi/fastapi-cli/pull/505) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump fastapi-cloud-cli from 0.23.0 to 0.26.0. PR [#506](https://github.com/fastapi/fastapi-cli/pull/506) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump pre-commit hooks. PR [#507](https://github.com/fastapi/fastapi-cli/pull/507) by [@pr-submit[bot]](https://github.com/apps/pr-submit).
+* ⬆ Bump the github-actions group with 2 updates. PR [#502](https://github.com/fastapi/fastapi-cli/pull/502) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump the python-packages group across 1 directory with 7 updates. PR [#498](https://github.com/fastapi/fastapi-cli/pull/498) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump fastapi-cloud-cli from 0.22.2 to 0.23.0. PR [#499](https://github.com/fastapi/fastapi-cli/pull/499) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump typer from 0.27.0 to 0.27.1. PR [#500](https://github.com/fastapi/fastapi-cli/pull/500) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump the github-actions group with 3 updates. PR [#497](https://github.com/fastapi/fastapi-cli/pull/497) by [@dependabot[bot]](https://github.com/apps/dependabot).
+* ⬆ Bump pre-commit hooks. PR [#501](https://github.com/fastapi/fastapi-cli/pull/501) by [@pr-submit[bot]](https://github.com/apps/pr-submit).
+* ⬆️ Bump setup-uv action to 10.0.1. PR [#495](https://github.com/fastapi/fastapi-cli/pull/495) by [@YuriiMotov](https://github.com/YuriiMotov).
 * 👷 Migrate automatic labels to Latest Changes. PR [#493](https://github.com/fastapi/fastapi-cli/pull/493) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Remove legacy label check. PR [#492](https://github.com/fastapi/fastapi-cli/pull/492) by [@tiangolo](https://github.com/tiangolo).
 * 🔐 Use PR Submit for pull requests. PR [#491](https://github.com/fastapi/fastapi-cli/pull/491) by [@tiangolo](https://github.com/tiangolo).
